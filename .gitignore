@@ -1,0 +1,9 @@
+.*
+!.gitignore
+!.travis.yml
+*#
+*~
+*.bak
+
+fig/
+fig.zip
