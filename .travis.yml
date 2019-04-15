@@ -8,3 +8,12 @@ before_install:
 script:
 - make
 - make install
+deploy:
+  provider: releases
+  api_key:
+    secure: rxzQQdp4fTRfJl2BVeqwcesxyKA9jwPJM3BHC7ZpuYvyWrRweMPKOYGJ45KJ2Hg9qFTT7ztVb208vgEZQBgF++ZfW8/zeVtW1UlsSWQsAf9g5YsqEsyCYPwS+bwMoviC5seYFdgcI8aTuMlhmsgVTdG9mu6F74cDuRIUeK4Hq6qBgQkTm16UMhN36v3UF5h9liSf+nfY0kU0FSGU3XfxZ7A8o8gdeuj5D3OlZMlfAKW6bSMcdkSkVYsRBS8F4z5MHtx9J0TtExvobrZ7AqMMhvL9IQNn36ym5yCMZJN/rUGdhunBnDzPY+ZtbFXKDyNkp6yFv8F4DeewFgKEc7u4lRdCi6J/MnSPlJ2xes2rS/MY6NYuqx7SCtYAuCnPEVnFDM8UsAD7ETcoMedtw3PsN4dtxf6rYoAe9xHm8o2hFqCdqPECRZD/qC2kwCa+EVM6SSVft2Xv28Bc6APjODITLBfCxK2dh33ss6BGfQOGQ3i2pg5Sc99BUW2sUifzvedtWpOxe5k6821IHP13a81EEFw/d365Sw413RJNu6G63/lB7KSJ9O/4ON7byysUtxJVb6/eiqBmgJGeyQZRevbsLKz6+UaaI1ZG/olgJbPIvPnYQIjn/abaRs6h6UkiQu0g2f9l/Jd888wmzJb3kinDft1kO86JsYcMiQUVGQc0hFc=
+  file: fig.zip
+  on:
+    repo: cph-tum/qclsip
+    tags: true
+  skip_cleanup: true
