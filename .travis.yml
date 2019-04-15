@@ -1,0 +1,10 @@
+sudo: true
+dist: cosmic
+before_install:
+- sudo apt-get update -qq
+- sudo apt-get install -y --no-install-recommends texlive-latex-extra
+  texlive-fonts-recommended texlive-science texlive-pictures latexmk
+  poppler-utils imagemagick inkscape
+script:
+- make
+- make install
