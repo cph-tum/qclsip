@@ -57,16 +57,20 @@
     \textcolor{siporange}{Carrier transport}\\Ensemble Monte Carlo (EMC)/\\
     Density Matrix EMC};
   %
+  % wave guide part
+  \node[mytext, myline, draw=sipgreen, anchor=east] (wg) at (8, 3.5) {
+    \textcolor{sipgreen}{Wave guide model}\\Film mode matching};
+  %
   % dynamic part
-  \node[mytext, myline, draw=sipblue, anchor=west] (lb) at (0, 3) {
+  \node[mytext, myline, draw=sipblue, anchor=west] (lb) at (0, 1.5) {
     \textcolor{sipblue}{Electron dynamics}\\Lindblad equation\\
     $\partial_t \hat{\rho} = -\mathrm{i}\hbar^{-1} \left[ \hat{H}_0 -
       \hat \mu E_z, \hat{\rho} \right] + \hat{\rho}_{\mathrm{diss}}$};
   %
-  \node[mytext, myline, draw=sipblue, anchor=south east] (mw) at (8, 0) {
+  \node[mytext, myline, draw=sipblue, anchor=south east] (mw) at (8, -1.5) {
     \textcolor{sipblue}{Optical field}\\Maxwell's equations in 1D\\
     $\partial_t H_y = \mu^{-1} \partial_x E_z$\\
-    $\partial_t E_z = \epsilon^{-1} \left( -\sigma E_z - \partial_t P_z +
+    $\partial_t E_z = \epsilon^{-1} \left( -\sigma E_z - \Gamma \partial_t P_z +
     \partial_x H_y \right)$};
   %
   % connections
@@ -92,6 +96,10 @@
   to[bend left] node[midway, above, outer sep=3pt] {$\partial_t P_z$
     %    $= N \mathrm{Tr}\left\{\hat \mu \partial_t \hat \rho\right\}$
   }
+  ($(mw.north east) - (1.3, 0)$);
+  %
+  \draw[myconn, draw=sipgreen] ($(wg.south east) - (1.1, 0)$)
+  -- node[midway, right] {$\epsilon$,$\sigma$,$\Gamma$}
   ($(mw.north east) - (1.1, 0)$);
 \end{tikzpicture}
 \end{document}
